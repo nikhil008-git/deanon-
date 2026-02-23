@@ -19,10 +19,11 @@ wss.on("connection", function (socket) {
         const strmessage = message.toString()
         const parsedMessage = JSON.parse(strmessage)
         if (parsedMessage.type === "join") {
+            // here what we did is we recieved the specific socket & room & name.
             allSockets.push({
                 socket,
                 room: parsedMessage.payload.room,
-                name: parsedMessage.payload.name
+                name: parsedMessage.payload.name,
 
             })
         }
@@ -30,7 +31,7 @@ wss.on("connection", function (socket) {
         if (parsedMessage.type === "chat") {
             const currentUserRoom = allSockets.find(user => user.socket === socket)?.room // what is the room of this user we got.
 
-            //here checks if the currentuser's room matches to any another socket's room
+            //here checks if the currentuser's room matches to any another socket's room accordingly we'll only send it to the specific room only.
             for (let i = 0; i < allSockets.length; i++) {
                 // @ts-ignore 
                 if (allSockets[i].room == currentUserRoom) {
