@@ -135,7 +135,7 @@ export default function Join() {
                             </div>
                         </div>
                         <div className="text-[10px] text-white/20 font-bold">
-                            © 2026 DEANON_LABS
+                            © 2026 DeAnon_by_nikhil
                         </div>
                     </div>
                 </div>

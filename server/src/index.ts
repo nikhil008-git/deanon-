@@ -17,7 +17,8 @@ let allSockets: User[] = []
 wss.on("connection", function (socket: WebSocket) {
     console.log("user connected ")
     // here message is gonna come as string.
-    socket.on("message", (message: Buffer) => {
+    // @ts-ignore
+    socket.on("message", (message) => {
         const strmessage = message.toString()
         const parsedMessage = JSON.parse(strmessage)
         if (parsedMessage.type === "join") {
