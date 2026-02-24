@@ -1,7 +1,8 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "type": "module",
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
@@ -12,11 +13,10 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "ws": "^8.19.0",
+    "@types/node": "^22.19.11",
     "@types/ws": "^8.18.1",
-    "typescript": "^5.9.3",
-    "ws": "^8.19.0"
+    "typescript": "^5.7.3"
   },
-  "devDependencies": {
-    "@types/node": "^22.19.11"
-  }
+  "devDependencies": {}
 }
