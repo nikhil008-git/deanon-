@@ -14,7 +14,7 @@ interface User {
 
 let allSockets: User[] = []
 
-wss.on("connection", function (socket) {
+wss.on("connection", function (socket: WebSocket) {
     console.log("user connected ")
     // here message is gonna come as string.
     socket.on("message", function (message) {
