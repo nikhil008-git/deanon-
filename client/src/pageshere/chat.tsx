@@ -29,7 +29,7 @@ export default function Chat() {
     const room = searchParams.get("room") || "VOID";
 
     useEffect(() => {
-        const ws = new WebSocket("ws://localhost:8081");
+        const ws = new WebSocket("wss://deanon.onrender.com/");
         setSocket(ws);
 
         ws.onopen = () => {
