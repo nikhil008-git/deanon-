@@ -40,6 +40,7 @@ wss.on("connection", function (socket: WebSocket) {
                 // @ts-ignore 
                 if (allSockets[i].room == currentUserRoom) {
                     const sender = allSockets.find((sender) => sender.socket === socket)
+                    if (!sender) return;
                     //@ts-ignore
                     allSockets[i].socket.send(
                         JSON.stringify({
