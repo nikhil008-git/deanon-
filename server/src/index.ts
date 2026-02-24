@@ -1,17 +1,7 @@
 // @ts-ignore
 import { WebSocketServer, WebSocket } from "ws";
-// @ts-ignore
-import http from "http";
-const server = http.createServer();
 
-// @ts-ignore
-import process from "node:process";
-
-const PORT = process.env.PORT || 8081;
-
-
-
-const wss = new WebSocketServer({ server });
+const wss = new WebSocketServer({ port: 8081 });
 
 interface User {
     socket: WebSocket;
@@ -22,11 +12,10 @@ interface User {
 
 let allSockets: User[] = []
 
-wss.on("connection", function (socket: WebSocket) {
+wss.on("connection", function (socket) {
     console.log("user connected ")
     // here message is gonna come as string.
-    // @ts-ignore
-    socket.on("message", (message) => {
+    socket.on("message", function (message) {
         const strmessage = message.toString()
         const parsedMessage = JSON.parse(strmessage)
         if (parsedMessage.type === "join") {
@@ -47,7 +36,6 @@ wss.on("connection", function (socket: WebSocket) {
                 // @ts-ignore 
                 if (allSockets[i].room == currentUserRoom) {
                     const sender = allSockets.find((sender) => sender.socket === socket)
-                    if (!sender) return;
                     //@ts-ignore
                     allSockets[i].socket.send(
                         JSON.stringify({
@@ -64,6 +52,3 @@ wss.on("connection", function (socket: WebSocket) {
         }
     })
 })
-server.listen(8081, () => {
-    console.log("HTTP + WS server running");
-});
