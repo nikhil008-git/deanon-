@@ -32,11 +32,11 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "",
-    title: "deanon",
+    title: "DeAnon.",
     description: "Check out my site.",
     images: [
       {
-        url: "https://nikhil-rajpurohit.vercel.app/og2.png",
+        url: "https://deanon-inky.vercel.app/deanon.png",
         width: 1200,
         height: 630,
         alt: "deanon",
@@ -48,10 +48,10 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "deanon",
-    description: "Check out my projects.",
+    description: "real time chat app.",
     images: [
       {
-        url: "https://nikhil-rajpurohit.vercel.app/og2.png",
+        url: "https://deanon-inky.vercel.app/deanon.png",
         width: 1200,
         height: 630,
         alt: "deanon",
