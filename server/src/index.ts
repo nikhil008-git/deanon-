@@ -1,14 +1,17 @@
 // @ts-ignore
 import { WebSocketServer, WebSocket } from "ws";
 // @ts-ignore
+import http from "http";
+const server = http.createServer();
 
+// @ts-ignore
 import process from "node:process";
 
 const PORT = process.env.PORT || 8081;
 
 
 
-const wss = new WebSocketServer({ port: Number(PORT) });
+const wss = new WebSocketServer({ server });
 
 interface User {
     socket: WebSocket;
@@ -61,3 +64,6 @@ wss.on("connection", function (socket: WebSocket) {
         }
     })
 })
+server.listen(8081, () => {
+    console.log("HTTP + WS server running");
+});
