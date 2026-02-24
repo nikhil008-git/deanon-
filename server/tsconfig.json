@@ -5,11 +5,17 @@
     "rootDir": "./src",
     "outDir": "./dist",
     // Environment Settings
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "target": "ESNext",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "target": "esnext",
     "lib": [
-      "ESNext"
+      "esnext"
+    ],
+    "types": [
+      "node"
+    ],
+    "typeRoots": [
+      "./node_modules/@types"
     ],
     // Other Outputs
     "sourceMap": true,
@@ -21,10 +27,9 @@
     // Recommended Options
     "strict": true,
     "jsx": "react-jsx",
-    "verbatimModuleSyntax": true,
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
-    "skipLibCheck": true,
+    "skipLibCheck": true
   }
 }

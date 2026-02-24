@@ -1,5 +1,8 @@
+/// <reference types="node" />
 // @ts-ignore
 import { WebSocketServer, WebSocket } from "ws";
+// @ts-ignore
+import process from "node:process";
 const PORT = process.env.PORT || 8081;
 
 
