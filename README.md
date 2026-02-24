@@ -1,6 +1,6 @@
-# 🕵️ DeAnon — Anonymous Real-Time Chat
+# DeAnon : Real-Time Chat
 
-A minimal, anonymous real-time chat app. Users join a room with an alias — no accounts, no logs, no identity.
+A minimal, real-time chat app. Users join a room with an alias — no accounts, no logs, no identity.
 
 Built with **Next.js** (client) + **Node.js WebSocket server** (ws), deployed on Render.
 
